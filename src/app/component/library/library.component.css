@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 10em;
+}
+
+.shelf {
+  text-align: center;
+  width: 100vw;
+}
+
+.shelf-books {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  margin-top: 1em;
+}
+
+.card{
+  margin: 1em;
+  width: 30%;
+}

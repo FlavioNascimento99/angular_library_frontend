@@ -1,0 +1,48 @@
+<div class="main">
+
+  <h1>Library App 📚</h1>
+  <p>
+    Add basic information of your book and then click on "Library" to see data stored in the Database
+  </p>
+
+  <form [formGroup]="formReactive" (ngSubmit)="createOrUpdateBook()" class="main">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput [(ngModel)]="book.title" formControlName="title">
+      <div class="erro" *ngIf="formReactive.get('title')?.invalid && formReactive.get('title')?.touched">
+        this field will not be written empty
+      </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Autor</mat-label>
+      <input matInput [(ngModel)]="book.autor" formControlName="autor">
+      <div class="erro" *ngIf="formReactive.get('autor')?.invalid && formReactive.get('autor')?.touched">
+        this field will not be written empty
+      </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <input matInput [(ngModel)]="book.description" formControlName="description">
+      <div class="erro" *ngIf="formReactive.get('description')?.invalid && formReactive.get('description')?.touched">
+        this field will not be written empty
+      </div>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>number of copies</mat-label>
+      <input matInput [(ngModel)]="book.exemplar" formControlName="exemplar">
+      <div class="erro" *ngIf="formReactive.get('exemplar')?.invalid && formReactive.get('exemplar')?.touched">
+        make sure this field is populated only by numerical characters
+      </div>
+    </mat-form-field>
+  </form>
+
+
+  <div class="buttons">
+    <button mat-flat-button color="primary" type="submit" [disabled]="formReactive.invalid" (click)="createOrUpdateBook()"> {{ buttonFunctionName }} </button>
+    <button mat-flat-button color="primary" routerLink="/library"> To Library </button>
+  </div>
+
+</div>

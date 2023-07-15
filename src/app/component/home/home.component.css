@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.buttons {
+  height: 13vh;
+
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+
+}
+
+.erro {
+  color: red;
+}

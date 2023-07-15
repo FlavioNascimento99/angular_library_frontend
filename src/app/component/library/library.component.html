@@ -1,0 +1,36 @@
+<div class="main">
+  <div class="shelf">
+    <h1>
+      Library 📚
+    </h1>
+    <div class="nobooks" *ngIf="books.length === 0">
+      <h1>
+        no registered books 😢
+      </h1>
+    </div>
+
+
+    <div *ngIf="books.length > 0" class="shelf-books">
+      <mat-card *ngFor="let book of books" class="card">
+        <mat-card-header align="start">
+          <mat-card-title>{{ book.title }}</mat-card-title>
+          <mat-card-subtitle>{{ book.autor }}</mat-card-subtitle>
+          <mat-card-subtitle>{{ book.exemplar }} · copies available</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content align="start">
+          <p>
+            {{ book.description }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button (click)="removeBookFromShelf(book)">Delete</button>
+          <button mat-button [routerLink]="['/editing', book.id]">Edit</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+  <div class="button">
+    <button mat-flat-button color="primary" routerLink="/home">To Home</button>
+  </div>
+</div>
